@@ -29,5 +29,4 @@ void MyComponent::OnStart()
 void MyComponent::Update()
 {
 	static int i = 0;
-	_Platform->LogString("MyComponent::Update %d\n", i++);
 }
