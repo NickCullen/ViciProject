@@ -40,6 +40,8 @@ def BuildWin32():
 
 #builds for win64
 def BuildWin64():
+	print("Building for Win64")
+
 	#refresh and make new win64 directory if needed
 	if not os.path.isdir("tmp\win64"):
 		os.system("mkdir tmp\win64")
@@ -53,25 +55,27 @@ def BuildWin64():
 def BuildMac():
 	print("Building for Mac")
 
-	#refresh and make new win32 directory if needed
-	if not os.path.isdir("build/mac"):
-		os.system("mkdir build/mac")
+	#refresh and make new mac directory if needed
+	if not os.path.isdir("tmp/mac"):
+		os.system("mkdir tmp/mac")
+
+	#copy required cmake file from windows template
+	shutil.copyfile((home+"/Templates/Mac/CMakeLists.txt"), "tmp/mac/CMakeLists.txt")
 
 	#generate cmake
-	os.system("cd build/mac && cmake -DVICI_MAC:BOOL=true -G \"" + generator + "\" ../..")
+	os.system("cd tmp/mac && cmake -G \"" + generator + "\" .")
 
 	#if it was a make file run make!
 	if generator == "Unix Makefiles":
-		os.system("cd build/mac && make")
+		os.system("cd tmp/mac && make")
 	elif generator == "Xcode":
 		#find name of file with .xcodeproj that cmake created
-		os.chdir("build/mac")
 		for f in glob.glob("*.xcodeproj"):
 			#trim .xcodeproj
 			target = f
 			if target.endswith('.xcodeproj'):
 			    target = target[:-10]
-			cmd = "xcodebuild -target " + target
+			cmd = "cd tmp/mac && xcodebuild -target " + target
 			os.system(cmd)
 
 def BuildLinux():
@@ -148,6 +152,7 @@ if __name__ == '__main__':
 
 		elif build_platform == "ios":
 			BuildIOS()
+			
 	#else no platform was specified so lets try and be smart and build
 	#for the given platform
 	else:

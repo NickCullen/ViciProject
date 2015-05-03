@@ -23,7 +23,7 @@ void MyComponent::OnStart()
 	IComponent::OnStart();
 
 	_Platform->LogString("In MyComponent::Init\n");
-	RegisterCallback(EComponentCallback::eUpdate, DELEGATE(MyComponent, Update, this));
+	RegisterCallback(eUpdate, DELEGATE(MyComponent, Update, this));
 }
 
 void MyComponent::Update()
