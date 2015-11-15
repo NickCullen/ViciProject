@@ -48,8 +48,4 @@
 		<path>Assets/Materials/None.material</path>
 	</asset>
 
-	<!-- Scripts -->
-	<asset type="SQScriptAsset" id="MyScript">
-		<path>Assets/Scripts/MyScript.nut</path>
-	</asset>
 </root>

@@ -7,7 +7,7 @@
 				<scale>1 1 1</scale>
 			</transform>
 
-			<component type="VCamera">
+			<component type="Camera">
 				<!-- the buffer flags this camera will clear -->
 				<clear_color_buffer>true</clear_color_buffer>
 				<clear_depth_buffer>true</clear_depth_buffer>
@@ -21,11 +21,6 @@
 
 		</gameobject>
 
-			<gameobject id="MyObject" indestructable="false" enabled="true" layer="0">
-			<component type="MyComponent">
-			
-			</component>
-			</gameobject>
 		<gameobject id="BackLight" indestructable="false" enabled="true" layer="0">
 			<transform>
 				<position>0 0 -6</position>
