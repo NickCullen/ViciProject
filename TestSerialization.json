@@ -1,0 +1,29 @@
+{
+    "MyObject": {
+        "Object": {
+            "_indestructable": false,
+            "_garbage": false,
+            "_hash": {
+                "_hash": 0
+            }
+        },
+        "_transform": {
+            "_pos.x": 100,
+            "_pos.y": 0,
+            "_pos.z": 100,
+            "_scale.x": 20,
+            "_scale.y": 30,
+            "_scale.z": 40,
+            "_rotation.x": 0,
+            "_rotation.y": 90,
+            "_rotation.z": 0
+        },
+        "_components": [
+            {
+                "_component_type": {
+                    "_hash": 2687629248
+                }
+            }
+        ]
+    }
+}
